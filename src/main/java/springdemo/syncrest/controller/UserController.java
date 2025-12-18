@@ -20,10 +20,11 @@ public class UserController {
     }
 
     @PostMapping("/{username}/changeRole")
-    public CompletableFuture<User> changeUserRole(
+    public User changeUserRole(
             @PathVariable String username,
             @RequestParam String role) {
 
-        return userService.changeRole(username, role);
+        userService.changeRole(username, role);
+        return new User(null, username, role);
     }}
 

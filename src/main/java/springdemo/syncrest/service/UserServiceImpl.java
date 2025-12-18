@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
         return CompletableFuture.supplyAsync(() -> {
             System.out.println("Thread supplyAsync: " + Thread.currentThread().getName());
             try {
-                Thread.sleep(2000);
+                Thread.sleep(10000);
                 return findUserByUsername(username);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
